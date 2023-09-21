@@ -1,0 +1,15 @@
+Itens => 
+- Laptop com { Suporte Wi-Fi em modo monitor (promiscous mode) + Kali Linux (Boot via pendrive) } (sim)
+- Aircrack (sim)
+- Airmon-ng (sim)
+- Nmap (sim)
+- Hydra (instalar sudo apt install hydra -y) (sim)
+- Desenvolver um webcrawler para geracao de wordlist acertiva baseadas em paginas web (fazendo)
+- Criar a wordlist baseadas em websites da webcrauler (fazendo)
+
+Passos =>
+- Quebrar o criptograma do braco do professor (chave 1994)
+- A senha do wifi e a tatuagem do professor (LHVLLFE)
+- Usar o nmap para localizar o target (port scanner)
+
+
